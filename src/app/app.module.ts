@@ -1,16 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser'
+import { HttpClientModule } from '@angular/common/http'
 import { NgModule } from '@angular/core'
-
+import { BrowserModule } from '@angular/platform-browser'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { CurrentWeatherComponent } from './current-weather/current-weather.component'
 import { MaterialModule } from './material.module'
-import { PlayerComponent } from './pages/player/player.component'
+import { WeatherService } from './weather/weather.service'
 
 @NgModule({
-  declarations: [AppComponent, PlayerComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule],
-  providers: [],
+  declarations: [AppComponent, CurrentWeatherComponent],
+  imports: [
+    BrowserModule, AppRoutingModule,
+    BrowserAnimationsModule, MaterialModule,
+    HttpClientModule
+  ],
+  providers: [WeatherService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

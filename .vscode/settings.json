@@ -28,5 +28,8 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
   },
+  "javascript.format.semicolons": "remove",
+    "typescript.format.semicolons": "remove",
   "npm.enableScriptExplorer": true
 }
+
